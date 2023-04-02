@@ -1,10 +1,10 @@
 import Phaser from 'phaser'
-import PreLoadScene from './scenes/PreLoadScene'
-import MainMenu from './scenes/MainMenu'
-import TutorialScene from './scenes/TutorialScene'
-import LevelScene from './scenes/LevelScene'
-import PauseScene from './scenes/PauseScene'
-import GameOver from './scenes/GameOver'
+import PreLoadScene from './scripts/scenes/PreLoadScene'
+import MainMenu from './scripts/scenes/MainMenu'
+import TutorialScene from './scripts/scenes/TutorialScene'
+import LevelScene from './scripts/scenes/LevelScene'
+import PauseScene from './scripts/scenes/PauseScene'
+import GameOver from './scripts/scenes/GameOver'
 
 const config: Phaser.Types.Core.GameConfig = {
 	type: Phaser.AUTO,

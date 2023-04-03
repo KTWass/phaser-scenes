@@ -6,16 +6,15 @@ export default class PreloadScene extends Phaser.Scene {
 
   preload() {
 
-    this.load.image("main", "assets/ada.png");
-    this.load.image("pause", "assets/potato.png");
-    this.load.image("gameOver", "assets/soon.png");
-    this.load.image("tutorial", "assets/whiteboard_corgi.png");
-    this.load.image("level1", "assets/campus.png");
-    this.load.image("level2", "assets/east_campus.png");
-    this.load.image("level3", "assets/trabant.png");
-    this.load.image("sky", "assets/sky.png");
-    this.load.image("end", "assets/end.png");
-    this.load.image("start", "assets/start.png");
+    this.load.image("main", "assets/images/ada.png");
+    this.load.image("pause", "assets/images/potato.png");
+    this.load.image("gameOver", "assets/images/soon.png");
+    this.load.image("tutorial", "assets/images/whiteboard_corgi.png");
+    this.load.image("level1", "assets/images/campus.png");
+    this.load.image("level2", "assets/images/east_campus.png");
+    this.load.image("level3", "assets/images/trabant.png");
+    this.load.image("end", "assets/images/end.png");
+    this.load.image("start", "assets/images/start.png");
   }
 
   create() {

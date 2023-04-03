@@ -5,11 +5,11 @@ export default class PreloadScene extends Phaser.Scene {
   }
 
   preload() {
-
-    this.load.image("main", "assets/images/ada.png");
-    this.load.image("pause", "assets/images/potato.png");
-    this.load.image("gameOver", "assets/images/soon.png");
-    this.load.image("tutorial", "assets/images/whiteboard_corgi.png");
+    // loads all the images for the project
+    this.load.image("ada", "assets/images/ada.png");
+    this.load.image("potato", "assets/images/potato.png");
+    this.load.image("cat", "assets/images/soon.png");
+    this.load.image("corgi", "assets/images/whiteboard_corgi.png");
     this.load.image("level1", "assets/images/campus.png");
     this.load.image("level2", "assets/images/east_campus.png");
     this.load.image("level3", "assets/images/trabant.png");
@@ -18,6 +18,7 @@ export default class PreloadScene extends Phaser.Scene {
   }
 
   create() {
+    //starts with the main menu scene
     this.scene.start('MainMenu');
     console.log("done with preload");
   }

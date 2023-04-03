@@ -8,14 +8,14 @@ export default class GameOver extends Phaser.Scene {
         super({ key: 'GameOver' });
     }
 
-    init(data: {lastX: number, lastY: number}) {
+    init(data: {lastX: number, lastY: number, levelNumber:number}) {
         this.startX = data.lastX;
         this.startY = data.lastY;
     }
 
     create() {
         // // creates the draggable image object 
-        this.importantImage = new DraggableImage(this, this.startX, this.startY, "gameOver");
+        this.importantImage = new DraggableImage(this, this.startX, this.startY, "cat");
         this.add.existing(this.importantImage);
 
         this.add.text(this.scale.width / 2, this.scale.height * 2 / 3, "No more game!");

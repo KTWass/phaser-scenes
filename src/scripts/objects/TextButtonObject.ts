@@ -7,7 +7,7 @@
 export class TextButtonObject extends Phaser.GameObjects.Text {
     constructor(scene: Phaser.Scene, y: number, text: string, callback: () => void) {
         super(scene, scene.scale.width / 2, y, text, {});
-        console.log("in transition button - " + text)
+        console.log("in text button - " + text)
        
         this.setInteractive({ useHandCursor: true })
             .on('pointerover', () => this.enterButtonHoverState())

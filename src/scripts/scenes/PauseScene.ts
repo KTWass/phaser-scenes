@@ -19,7 +19,7 @@ export default class PauseScene extends Phaser.Scene {
 
     create() {
          // creates the draggable image object
-        this.importantImage = new DraggableImage(this, this.startX, this.startY, "pause");
+        this.importantImage = new DraggableImage(this, this.startX, this.startY, "potato");
          // adds it to this scene
         this.add.existing(this.importantImage);
 
@@ -28,15 +28,16 @@ export default class PauseScene extends Phaser.Scene {
     }
 
     update() {
-         // creates the transition button object to resume to last scene
+         // creates the text button object to resume to last scene
         this.add.existing(new TextButtonObject(this, this.scale.height * 3 / 4, "Resume", () => {
             this.scene.stop();
             this.scene.wake(this.previousScene);
         }));
         
     }
-
+/*
     getLastXY() {
         return { lastX: this.importantImage.x, lastY: this.importantImage.y };
     }
+    */
 }

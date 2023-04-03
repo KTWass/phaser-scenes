@@ -1,6 +1,6 @@
 import { TextButtonObject } from '../objects/TextButtonObject';
 import DraggableImage from '../objects/DraggableImage';
-import ImageButtonObject from '../objects/ImageButtonTransition';
+import ImageButtonObject from '../objects/ImageButtonObject';
 
 export default class LevelScene extends Phaser.Scene {
     levelNumber!: number;
@@ -26,19 +26,19 @@ export default class LevelScene extends Phaser.Scene {
          // adds it to this scene
         this.add.existing(this.importantImage);
         
-        // creates the transition button to move to a different level & adds to scene 
+        // creates the text button to move to a different level & adds to scene 
         this.add.existing(new TextButtonObject(this, this.scale.height * 2 / 3, "Level " + this.levelNumber, () => {
-            let next = this.levelNumber + 1;
-            let data = this.getLastXY();
-            if (next > 3) {
-                this.scene.start("GameOver", data);
+            let next:number = this.levelNumber + 1;    
+            let data = this.getLastXY();      
+            if (next > 3) {               
+                this.scene.start("GameOver",data);
             } else {
                 data['levelNumber'] = next;
                 this.scene.start("LevelScene", data);
             }
         }))
 
-        // creates the transition button to pasue & adds to scene 
+        // creates the text button to pasue & adds to scene 
         this.add.existing(new TextButtonObject(this, this.scale.height * 3 / 4, "Pause", () => {
             this.scene.launch("PauseScene", { previousScene: this.scene.key });
             this.scene.switch("PauseScene");
@@ -46,19 +46,20 @@ export default class LevelScene extends Phaser.Scene {
 
          // add an image button to go to tutorial the game when clicked
          this.add.existing(new ImageButtonObject(this, 50, 50, "start", () => {
-            this.scene.start("TutorialScene",{lastX:this.startX, lastY:this.startY})
+            this.scene.start("TutorialScene",this.getLastXY())
         }));
 
         // add an image button to end the game when clicked
         this.add.existing(new ImageButtonObject(this, 650, 50, "end", () => {
-            this.scene.start("GameOver",{lastX:this.startX, lastY:this.startY})
+            this.scene.start("GameOver",this.getLastXY())
         }));
     }
 
     update() {
     }
 
-    getLastXY() {
-        return { lastX: this.importantImage.x, lastY: this.importantImage.y, levelNumber:0};
-    }
+    getLastXY(): {lastX:number, lastY:number,levelNumber:number}{
+      return { lastX: this.importantImage.x, lastY: this.importantImage.y, levelNumber:0};
+      
+}
 }
